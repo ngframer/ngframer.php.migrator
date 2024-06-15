@@ -1,0 +1,5 @@
+# Ignore the following folders.
+/vendor
+/.idea
+
+# Ignore the following files.

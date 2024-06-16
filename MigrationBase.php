@@ -1,6 +1,6 @@
 <?php
 
-namespace NGFramer\NGFramerPHPBase\migration;
+namespace NGFramer\NGFramerPHPMigrator;
 
 abstract class MigrationBase
 {

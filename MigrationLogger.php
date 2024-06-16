@@ -1,9 +1,8 @@
 <?php
 
-namespace NGFramer\NGFramerPHPBase\migration;
+namespace NGFramer\NGFramerPHPMigrator;
 
 use app\config\ApplicationConfig;
-use NGFramer\NGFramerPHPBase\utilities\UtilFilesystem;
 
 final class MigrationLogger
 {
@@ -37,7 +36,7 @@ final class MigrationLogger
         $appNamespace = ApplicationConfig::get('namespace');
 
         // Get the list of files in the migrations folder.
-        $migrationFiles = array_values(UtilFilesystem::readDirectory($appPath . "/migrations"));
+        $migrationFiles = array_values(self::readDirectory($appPath . "/migrations"));
 
         // Check if _migrationLog.json if not exists and then close it.
         $logPath = $appPath . "/migrations/_migrationLog.json";
@@ -74,7 +73,7 @@ final class MigrationLogger
             // Get the index of the last element and update it.
             $lastIndex = count($this->migrationLog) - 1;
             $this->migrationLog[$lastIndex]['down'] = $migrateDownScript;
-            // Write the mirgationLog to the file also upon the creation of migrationLog['down'].
+            // Write the migrationLog to the file also upon the creation of migrationLog['down'].
             $this->writeLog();
         }
     }
@@ -93,5 +92,13 @@ final class MigrationLogger
         // Write the content to the file and close it.
         fwrite($logFile, $logContent);
         fclose($logFile);
+    }
+
+
+    // Supportive function for reading the directory.
+    public function readDirectory(string $path): array
+    {
+        $files = scandir($path);
+        return array_diff($files, ['.', '..']);
     }
 }

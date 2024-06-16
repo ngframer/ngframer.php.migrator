@@ -1,23 +1,24 @@
 {
-    "name": "ngframer/ngframer.php.migrator",
-    "description": "Migration system for your project's database that's too simple.",
-    "license": "MIT",
-    "autoload": {
-        "psr-4": {
-            "NGFramer\\NGFramerPHPMigrator\\": "/"
-        }
-    },
-    "authors": [
-        {
-            "name": "NG Framer",
-            "homepage": "https://github.com/ngframer"
-        },
-        {
-            "name": "Kishor Neupane",
-            "homepage": "https://github.com/neupkishor"
-        }
-    ],
-    "require": {
-        "ngframer/ngframer.php.sqlservices": "dev-main"
+  "name": "ngframer/ngframer.php.migrator",
+  "description": "Migration system for your project's database that's too simple.",
+  "license": "MIT",
+  "autoload": {
+    "psr-4": {
+      "NGFramer\\NGFramerPHPMigrator\\": "/"
     }
+  },
+  "authors": [
+    {
+      "name": "NG Framer",
+      "homepage": "https://github.com/ngframer"
+    },
+    {
+      "name": "Kishor Neupane",
+      "homepage": "https://github.com/neupkishor"
+    }
+  ],
+  "require": {
+    "ngframer/ngframer.php.sqlservices": "dev-main",
+    "ext-json": "*"
+  }
 }

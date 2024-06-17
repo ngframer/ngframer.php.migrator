@@ -18,7 +18,7 @@
     }
   ],
   "require": {
-    "ngframer/ngframer.php.sqlservices": "dev-main",
+    "ngframer/ngframer.php.sqlservices": "~v1.0.2",
     "ext-json": "*"
   }
 }
